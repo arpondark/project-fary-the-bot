@@ -78,7 +78,7 @@ void drawFace() {
     display.fillCircle(rEx - 5, baseEyeY + pupilYShift - 1, 2, SSD1306_WHITE);
   }
 
-  // mouth (fixed)
+  // mouth
   display.drawPixel(64, baseMouthY + 1, SSD1306_WHITE); 
   display.drawLine(61, baseMouthY + 2, 63, baseMouthY + 2, SSD1306_WHITE);
   display.drawLine(65, baseMouthY + 2, 67, baseMouthY + 2, SSD1306_WHITE);
@@ -89,7 +89,7 @@ void drawFace() {
   display.drawPixel(22, baseEyeY + 10, SSD1306_WHITE); 
   display.drawPixel(106, baseEyeY + 10, SSD1306_WHITE);
 
-  // hands (MOVED DOWN)
+  // hands
   drawLeftHand(leftX, 46);
   drawRightHand(rightX, 46);
 
@@ -114,7 +114,7 @@ void animateHands() {
 
     tickEyes();
     drawFace();
-    delay(40);
+    delay(20);
   }
 
   delay(1500);
@@ -134,16 +134,18 @@ void animateHands() {
 
     tickEyes();
     drawFace();
-    delay(30);
+    delay(15);
   }
 }
 
 // ---------------- SETUP ----------------
 void setup() {
-  Wire.begin(21, 22);
+  Wire.begin(20, 21);  // SDA = 20, SCL = 21 (your config)
+
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     for(;;);
-  } 
+  }
+
   display.clearDisplay();
   display.display();
 }
@@ -152,9 +154,9 @@ void setup() {
 void loop() {
   tickEyes();
   drawFace();
-  delay(30);
+  delay(15);
 
-  if (millis() - lastTrigger >= 3000) {
+  if (millis() - lastTrigger >= 2000) {
     animateHands();
     lastTrigger = millis();
   }
