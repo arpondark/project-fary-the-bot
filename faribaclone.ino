@@ -143,7 +143,7 @@ void setup() {
   Wire.begin(21, 22);
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     for(;;);
-  }
+  } 
   display.clearDisplay();
   display.display();
 }
