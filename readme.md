@@ -9,7 +9,6 @@ Fary is an interactive AI-style companion bot for the ESP32 C3 Mini with an OLED
 | **OLED SDA** | GPIO 20 | I2C Data |
 | **OLED SCL** | GPIO 21 | I2C Clock |
 | **Button** | GPIO 6 | Mode Selection (Short to GND) |
-| **Buzzer** | GPIO 1 | Feedback Sound |
 
 ## Functionality
 
