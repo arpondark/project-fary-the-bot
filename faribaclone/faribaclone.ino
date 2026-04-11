@@ -205,7 +205,7 @@ void showBootScreen(const char *top, const char *bottom)
 
 void bootSequence()
 {
-  showBootScreen("Hi! I'm", "Fari"); delay(5000);
+  showBootScreen("Hi! I'm", "Fari Bot"); delay(5000);
   showBootScreen("A clone Of", "Fariba"); delay(5000);
   showBootScreen("Powered BY", "DRAC Studios"); delay(5000);
   showBootScreen("Made By", "ARPON"); delay(5000);
